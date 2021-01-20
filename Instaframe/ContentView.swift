@@ -9,8 +9,19 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+
+        
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 250) {
+                ForEach(data) { item in
+                    GeometryReader { geometry in
+                        CardView()
+                    }
+                }
+            }
+        }
+        
+        
     }
 }
 
@@ -19,3 +30,9 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+struct CardData: Identifiable {
+    var id = UUID()
+}
+
+let data = [ CardData(), CardData(), CardData()]

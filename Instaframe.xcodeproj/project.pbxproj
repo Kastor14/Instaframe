@@ -11,6 +11,7 @@
 		0367C85C25B8AEA700657AE0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0367C85B25B8AEA700657AE0 /* ContentView.swift */; };
 		0367C85E25B8AEA800657AE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0367C85D25B8AEA800657AE0 /* Assets.xcassets */; };
 		0367C86125B8AEA800657AE0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0367C86025B8AEA800657AE0 /* Preview Assets.xcassets */; };
+		0367C86A25B8AF3500657AE0 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0367C86925B8AF3500657AE0 /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		0367C85D25B8AEA800657AE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0367C86025B8AEA800657AE0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0367C86225B8AEA800657AE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0367C86925B8AF3500657AE0 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				0367C85925B8AEA700657AE0 /* InstaframeApp.swift */,
 				0367C85B25B8AEA700657AE0 /* ContentView.swift */,
+				0367C86925B8AF3500657AE0 /* CardView.swift */,
 				0367C85D25B8AEA800657AE0 /* Assets.xcassets */,
 				0367C86225B8AEA800657AE0 /* Info.plist */,
 				0367C85F25B8AEA800657AE0 /* Preview Content */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0367C85C25B8AEA700657AE0 /* ContentView.swift in Sources */,
+				0367C86A25B8AF3500657AE0 /* CardView.swift in Sources */,
 				0367C85A25B8AEA700657AE0 /* InstaframeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
