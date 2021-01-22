@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var samplePost:Post = Post(username: "@johnappleseed", image: Image("sample_image_1"), avatar: Image("sample_face"), loved: true)
+
     var body: some View {
 
         
@@ -15,7 +17,7 @@ struct ContentView: View {
             HStack(spacing: 250) {
                 ForEach(data) { item in
                     GeometryReader { geometry in
-                        CardView()
+                        CardView(post: $samplePost)
                     }
                 }
             }

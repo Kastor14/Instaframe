@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct CardView: View {
+    @State var preview:Bool = false
+    @Binding var post:Post
     @State var lovedCard: Bool = false
     @State var shareImage : [UIImage] = []
     func shareSheet() {
@@ -17,7 +19,7 @@ struct CardView: View {
         }
     var body: some View {
         VStack {
-            Image("sample_image_1")
+            post.image
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 240, height: 310)
@@ -27,45 +29,66 @@ struct CardView: View {
                     
                 Spacer()
                 HStack{
-                    Image("sample_face")
+                    post.avatar
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 55, height: 55)
                         .clipShape(Circle())
                         .shadow(color: Color.black.opacity(0.3), radius: 20, x: 0, y: 2)
-                    Text("@Username")
+                    Text(post.username)
                     Spacer()
                 }
                 .padding(.bottom, 10)
                 .padding(.horizontal, 15)
                 HStack {
-                    Button(action: {self.lovedCard.toggle()}) {
-                        Image(systemName: lovedCard ? "heart.fill" : "heart")
+                    if !preview {
+                        Button(action: {self.lovedCard.toggle()}) {
+                            Image(systemName: lovedCard ? "heart.fill" : "heart")
+                                .font(.system(size: 21))
+                                .foregroundColor(lovedCard ? Color.red : Color.black)
+                        }
+                    } else {
+                        Image(systemName: "heart.fill")
                             .font(.system(size: 21))
-                            .foregroundColor(lovedCard ? Color.red : Color.black)
+                            .foregroundColor(Color.black.opacity(0.5))
+                        
                     }
                     
                     Spacer()
-                    Button(action: {
-                        // Add Message View
-                    }) {
+                    if !preview {
+                        Button(action: {
+                            // Add Message View
+                        }) {
+                            Image(systemName: "message")
+                                .font(.system(size: 21))
+                                .foregroundColor(.black)
+                            
+                        }
+                    } else {
                         Image(systemName: "message")
                             .font(.system(size: 21))
-                            .foregroundColor(.black)
+                            .foregroundColor(Color.black.opacity(0.5))
                         
                     }
                     
                     Spacer()
-                    Button(action: {
-                        shareImage.removeAll()
-                        shareImage.append(UIImage(named: "sample_image_1") ?? UIImage())
-                        
-                        shareSheet()
-                    }) {
+                    
+                    if !preview {
+                        Button(action: {
+                            shareImage.removeAll()
+                            shareImage.append(UIImage())
+
+                            shareSheet()
+                        }) {
+                            Image(systemName: "square.and.arrow.up")
+                                .font(.system(size: 21))
+                                .foregroundColor(.black)
+                        }
+                    } else {
                         Image(systemName: "square.and.arrow.up")
                             .font(.system(size: 21))
-                            .foregroundColor(.black)
-                    }
+                            .foregroundColor(Color.black.opacity(0.5))
+                        }
 //                    .sheet(isPresented: $showingSheet, content: {
 //                        ShareSheet(items: shareItems)
 //                    })
@@ -87,12 +110,32 @@ struct CardView: View {
     }
 }
 
-struct CardView_Previews: PreviewProvider {
-    static var previews: some View {
-        CardView()
+//struct CardView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CardView(post: samplePost)
+//    }
+//}
+
+
+
+struct Post: Identifiable {
+    
+    var id = UUID()
+    var username:String
+    var image:Image
+    var avatar:Image
+    var loved:Bool
+    var previewImage:Image? {
+        didSet {
+            image = previewImage!
+        }
+    }
+    
+    mutating func updateImagewithPreview() -> Void {
+        if previewImage != nil {
+            image = previewImage!
+        }
     }
 }
 
-
-
-
+let samplePost:Post = Post(username: "@johnappleseed", image: Image("sample_image_1"), avatar: Image("sample_face"), loved: true)
