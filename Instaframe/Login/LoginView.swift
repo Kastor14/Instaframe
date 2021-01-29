@@ -12,32 +12,33 @@ struct LoginView: View {
     var body: some View {
         
         ZStack {
-            ZStack {
-                
-                
-                VStack(spacing: 20) {
-                    LoginCarouselView(reversed: .constant(true))
-                    LoginCarouselView(reversed: .constant(false))
-                    LoginCarouselView(reversed: .constant(true))
+            LoginWindowBackgroundView()
+            VStack(spacing: 25) {
+                LoginWindow()
+                Button(action: {}) {
+                    Text("Don’t have an account yet? Create one now.")
+                        .foregroundColor(Color(#colorLiteral(red: 0.2039215686, green: 0, blue: 1, alpha: 0.52)))
+                        .font(.system(size: 12, weight: .regular, design: .default))
+                        .frame(width: 260, height: 30)
+                        .background(LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 1, green: 0.9843137255, blue: 0.9843137255, alpha: 1)), Color(#colorLiteral(red: 0.9137254902, green: 0.9098039216, blue: 0.9764705882, alpha: 1))]), startPoint: .top, endPoint: .bottom))
+                        .clipShape(RoundedRectangle(cornerRadius: 15))
+                        .shadow(color: Color(.black).opacity(0.15), radius: 20, x: 0, y: 4)
                 }
-                Text("Instafame")
-                    .foregroundColor(.white)
-                    .font(.system(size: 48, weight: .bold, design: .rounded))
-                    .offset(y: -250)
-                    .shadow(color: Color(.black).opacity(0.83), radius: 20, x: 0, y: 3)
-    
+                Button(action: {}) {
+                    Text("Forgot your password?")
+                        .foregroundColor(Color(#colorLiteral(red: 0.2039215686, green: 0, blue: 1, alpha: 0.52)))
+                        .font(.system(size: 12, weight: .regular, design: .default))
+                        .frame(width: 140, height: 30)
+                        .background(LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 1, green: 0.9843137255, blue: 0.9843137255, alpha: 1)), Color(#colorLiteral(red: 0.9137254902, green: 0.9098039216, blue: 0.9764705882, alpha: 1))]), startPoint: .top, endPoint: .bottom))
+                        .clipShape(RoundedRectangle(cornerRadius: 15))
+                        .shadow(color: Color(.black).opacity(0.15), radius: 20, x: 0, y: 4)
+                }
             }
-            LoginWindow()
         }
         
-        //        ZStack {
-        //            VStack(spacing: 20) {
-        //
-        //
-        //            }
-        //        }
     }
 }
+
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
@@ -48,62 +49,128 @@ struct LoginView_Previews: PreviewProvider {
 
 
 struct LoginWindow: View {
-    @State private var email = ""
-    @State private var password = ""
+    
+    @State var email = ""
+    @State var password = ""
+    @State var userIsLogged = false
     var body: some View {
-        VStack(spacing: 60) {
-            
-            ZStack {
-                Path() { path in
-                    path.move(to: CGPoint(x: 0, y: 62.5))
-                    path.addLine(to: CGPoint(x: 280, y: 62.5))
-                }
-                .stroke(Color(#colorLiteral(red: 0.8431372549, green: 0.8431372549, blue: 0.8431372549, alpha: 1)).opacity(0.8), lineWidth: 1.2)
+        VStack {
+            VStack(spacing: 50) {
                 
-                VStack(spacing: 40) {
-                    TextField("Email", text: $email)
-                    
-                    
-                    
-                    SecureField("Password", text: $password)
-                }
-                .padding(.leading, 28)
+                LoginMainFields(email: $email, password: $password)
+                
+                
+                
+                
+                LoginMainButtons(email: $email, password: $password, userIsLogged: $userIsLogged)
                 
             }
-            .frame(width: 280, height: 125)
-            .background(Color.white)
-            .clipShape(RoundedRectangle(cornerRadius: 30, style:.continuous))
+            .frame(width: 345, height: 315)
+            .background(LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 1, green: 0.9843137255, blue: 0.9843137255, alpha: 1)), Color(#colorLiteral(red: 0.9137254902, green: 0.9098039216, blue: 0.9764705882, alpha: 1))]), startPoint: .top, endPoint: .bottom))
+            .clipShape(RoundedRectangle(cornerRadius: 30))
+            .shadow(color: Color(.black).opacity(0.3), radius: 20, x: 0, y: 4)
+        }
+        
+    }
+    
+}
+
+
+struct LoginMainButtons: View {
+    @Binding var email:String
+    @Binding var password:String
+    @Binding var userIsLogged:Bool
+    var body: some View {
+        HStack(spacing: 25) {
             
-            
-            
-            
-            HStack(spacing: 25) {
+            Button(action: {userIsLogged.toggle()}) {
+                Text("Login")
+                    .font(.system(size: 21, weight: .bold, design: .rounded))
+                    .foregroundColor(.white)
+                    .frame(width: 125, height: 45)
+                    .background(LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 0.3490196078, green: 0.3960784314, blue: 1, alpha: 1)), Color(#colorLiteral(red: 0.5098039216, green: 0.3725490196, blue: 0.9647058824, alpha: 1))]), startPoint: .top, endPoint: .bottom))
+                    .clipShape(RoundedRectangle(cornerRadius: 22.5))
+                    .shadow(color: Color(.black).opacity(0.3), radius: 10, x: 0, y: 4)
                 
-                Button(action: {}) {
-                    Text("Login")
-                        .font(.system(size: 21, weight: .bold, design: .rounded))
-                        .foregroundColor(.white)
-                        .frame(width: 125, height: 45)
-                        .background(LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 0.3490196078, green: 0.3960784314, blue: 1, alpha: 1)), Color(#colorLiteral(red: 0.5098039216, green: 0.3725490196, blue: 0.9647058824, alpha: 1))]), startPoint: .top, endPoint: .bottom))
-                        .clipShape(RoundedRectangle(cornerRadius: 22.5))
-                        .shadow(color: Color(.black).opacity(0.3), radius: 10, x: 0, y: 4)
-                    
-                }
-                Button(action: {}) {
-                    Text("SignUp!")
-                        .font(.system(size: 21, weight: .bold, design: .rounded))
-                        .foregroundColor(.white)
-                        .frame(width: 125, height: 45)
-                        .background(LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 0.3490196078, green: 0.3960784314, blue: 1, alpha: 1)), Color(#colorLiteral(red: 0.5098039216, green: 0.3725490196, blue: 0.9647058824, alpha: 1))]), startPoint: .top, endPoint: .bottom))
-                        .clipShape(RoundedRectangle(cornerRadius: 22.5))
-                        .shadow(color: Color(.black).opacity(0.3), radius: 10, x: 0, y: 4)
-                }
+            }.fullScreenCover(isPresented: $userIsLogged, content: {
+                Home()
+            })
+            Button(action: {}) {
+                Text("SignUp!")
+                    .font(.system(size: 21, weight: .bold, design: .rounded))
+                    .foregroundColor(.white)
+                    .frame(width: 125, height: 45)
+                    .background(LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 0.3490196078, green: 0.3960784314, blue: 1, alpha: 1)), Color(#colorLiteral(red: 0.5098039216, green: 0.3725490196, blue: 0.9647058824, alpha: 1))]), startPoint: .top, endPoint: .bottom))
+                    .clipShape(RoundedRectangle(cornerRadius: 22.5))
+                    .shadow(color: Color(.black).opacity(0.3), radius: 10, x: 0, y: 4)
             }
         }
-        .frame(width: 345, height: 315)
-        .background(LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 1, green: 0.9843137255, blue: 0.9843137255, alpha: 1)), Color(#colorLiteral(red: 0.9137254902, green: 0.9098039216, blue: 0.9764705882, alpha: 1))]), startPoint: .top, endPoint: .bottom))
-        .clipShape(RoundedRectangle(cornerRadius: 30))
-        .shadow(color: Color(.black).opacity(0.3), radius: 20, x: 0, y: 4)
     }
 }
 
+struct LoginMainFields: View {
+    @Binding var email:String
+    @Binding var password:String
+    var body: some View {
+        ZStack {
+            Path() { path in
+                path.move(to: CGPoint(x: 0, y: 100))
+                path.addLine(to: CGPoint(x: 400, y: 100))
+            }
+            .stroke(Color(#colorLiteral(red: 0.8431372549, green: 0.8431372549, blue: 0.8431372549, alpha: 1)).opacity(0.8), lineWidth: 1.2)
+            
+            VStack(spacing: 0) {
+                HStack {
+                    Image(systemName: "envelope")
+                        .foregroundColor(Color(.blue).opacity(0.43))
+                        .frame(width: 30, height: 80, alignment: .bottom)
+                    TextField("Email", text: $email)
+                        .textContentType(.emailAddress)
+                        .keyboardType(.emailAddress)
+                        .disableAutocorrection(true)
+                        .autocapitalization(.none)
+                        .frame(width: 260, height: 80, alignment: .bottom)
+                }
+                .padding(.leading, 15)
+                .padding(.bottom, 20)
+                
+                HStack {
+                    Image(systemName: "key")
+                        .foregroundColor(Color(.blue).opacity(0.43))
+                        .frame(width: 30, height: 80, alignment: .top)
+                    SecureField("Password", text: $password)
+                        .frame(width: 260, height: 80, alignment: .top)
+                }
+                .padding(.leading, 15)
+                .padding(.top, 20)
+                
+                
+            }
+            .padding(.leading, 20)
+            
+        }
+        .frame(width: 280, height: 125)
+        .background(Color.white)
+        .clipShape(RoundedRectangle(cornerRadius: 30, style:.continuous))
+    }
+}
+
+struct LoginWindowBackgroundView: View {
+    var body: some View {
+        ZStack {
+            
+            
+            VStack(spacing: 20) {
+                LoginCarouselView(reversed: .constant(true))
+                LoginCarouselView(reversed: .constant(false))
+                LoginCarouselView(reversed: .constant(true))
+            }
+            Text("Instafame")
+                .foregroundColor(.white)
+                .font(.system(size: 48, weight: .bold, design: .rounded))
+                .offset(y: -250)
+                .shadow(color: Color(.black).opacity(0.83), radius: 20, x: 0, y: 3)
+            
+        }
+    }
+}
