@@ -6,15 +6,85 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct LoginView: View {
+    @State var alertMessage:String = "Something went wrong."
+    @State var isLoading:Bool = false
+    @State var isSuccessful:Bool = false
+    @State var isFocused:Bool = false
+    @State var showAlert:Bool = false
+    @State var email:String = ""
+    @State var password:String = ""
+    
+    func Login(){
+        //ADD HIDE KEYBOARD!
+        self.isFocused = true
+       // self.showAlert = true
+        
+        
+        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+            self.isLoading = true
+            
+            if error != nil {
+                self.alertMessage = error?.localizedDescription ?? ""
+                self.showAlert = true
+            } else {
+                self.isSuccessful = true
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2){
+                    self.isSuccessful = true
+                    self.email = ""
+                    self.password = ""
+                }
+                
+            }
+        }
+    }
     
     var body: some View {
         
         ZStack {
+            
             LoginWindowBackgroundView()
             VStack(spacing: 25) {
-                LoginWindow()
+                VStack {
+                    VStack(spacing: 50) {
+                        
+                        LoginMainFields(email: $email, password: $password)
+                        
+                        
+                        
+                        
+                        HStack(spacing: 25) {
+                            
+                            Button(action: {Login()}) {
+                                Text("Login")
+                                    .font(.system(size: 21, weight: .bold, design: .rounded))
+                                    .foregroundColor(.white)
+                                    .frame(width: 125, height: 45)
+                                    .background(LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 0.3490196078, green: 0.3960784314, blue: 1, alpha: 1)), Color(#colorLiteral(red: 0.5098039216, green: 0.3725490196, blue: 0.9647058824, alpha: 1))]), startPoint: .top, endPoint: .bottom))
+                                    .clipShape(RoundedRectangle(cornerRadius: 22.5))
+                                    .shadow(color: Color(.black).opacity(0.3), radius: 10, x: 0, y: 4)
+                                
+                            }
+                            Button(action: {}) {
+                                Text("SignUp!")
+                                    .font(.system(size: 21, weight: .bold, design: .rounded))
+                                    .foregroundColor(.white)
+                                    .frame(width: 125, height: 45)
+                                    .background(LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 0.3490196078, green: 0.3960784314, blue: 1, alpha: 1)), Color(#colorLiteral(red: 0.5098039216, green: 0.3725490196, blue: 0.9647058824, alpha: 1))]), startPoint: .top, endPoint: .bottom))
+                                    .clipShape(RoundedRectangle(cornerRadius: 22.5))
+                                    .shadow(color: Color(.black).opacity(0.3), radius: 10, x: 0, y: 4)
+                            }
+                        }
+                        
+                    }
+                    .frame(width: 345, height: 315)
+                    .background(LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 1, green: 0.9843137255, blue: 0.9843137255, alpha: 1)), Color(#colorLiteral(red: 0.9137254902, green: 0.9098039216, blue: 0.9764705882, alpha: 1))]), startPoint: .top, endPoint: .bottom))
+                    .clipShape(RoundedRectangle(cornerRadius: 30))
+                    .shadow(color: Color(.black).opacity(0.3), radius: 20, x: 0, y: 4)
+                }
                 Button(action: {}) {
                     Text("Don’t have an account yet? Create one now.")
                         .foregroundColor(Color(#colorLiteral(red: 0.2039215686, green: 0, blue: 1, alpha: 0.52)))
@@ -35,6 +105,14 @@ struct LoginView: View {
                 }
             }
         }
+        .alert(isPresented: $showAlert) {
+            Alert(title: Text("Authentication Failed."), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+        }
+        .fullScreenCover(isPresented: $isSuccessful, content: {
+                    Home()
+                })
+        
+        
         
     }
 }
@@ -48,65 +126,6 @@ struct LoginView_Previews: PreviewProvider {
 
 
 
-struct LoginWindow: View {
-    
-    @State var email = ""
-    @State var password = ""
-    @State var userIsLogged = false
-    var body: some View {
-        VStack {
-            VStack(spacing: 50) {
-                
-                LoginMainFields(email: $email, password: $password)
-                
-                
-                
-                
-                LoginMainButtons(email: $email, password: $password, userIsLogged: $userIsLogged)
-                
-            }
-            .frame(width: 345, height: 315)
-            .background(LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 1, green: 0.9843137255, blue: 0.9843137255, alpha: 1)), Color(#colorLiteral(red: 0.9137254902, green: 0.9098039216, blue: 0.9764705882, alpha: 1))]), startPoint: .top, endPoint: .bottom))
-            .clipShape(RoundedRectangle(cornerRadius: 30))
-            .shadow(color: Color(.black).opacity(0.3), radius: 20, x: 0, y: 4)
-        }
-        
-    }
-    
-}
-
-
-struct LoginMainButtons: View {
-    @Binding var email:String
-    @Binding var password:String
-    @Binding var userIsLogged:Bool
-    var body: some View {
-        HStack(spacing: 25) {
-            
-            Button(action: {userIsLogged.toggle()}) {
-                Text("Login")
-                    .font(.system(size: 21, weight: .bold, design: .rounded))
-                    .foregroundColor(.white)
-                    .frame(width: 125, height: 45)
-                    .background(LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 0.3490196078, green: 0.3960784314, blue: 1, alpha: 1)), Color(#colorLiteral(red: 0.5098039216, green: 0.3725490196, blue: 0.9647058824, alpha: 1))]), startPoint: .top, endPoint: .bottom))
-                    .clipShape(RoundedRectangle(cornerRadius: 22.5))
-                    .shadow(color: Color(.black).opacity(0.3), radius: 10, x: 0, y: 4)
-                
-            }.fullScreenCover(isPresented: $userIsLogged, content: {
-                Home()
-            })
-            Button(action: {}) {
-                Text("SignUp!")
-                    .font(.system(size: 21, weight: .bold, design: .rounded))
-                    .foregroundColor(.white)
-                    .frame(width: 125, height: 45)
-                    .background(LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 0.3490196078, green: 0.3960784314, blue: 1, alpha: 1)), Color(#colorLiteral(red: 0.5098039216, green: 0.3725490196, blue: 0.9647058824, alpha: 1))]), startPoint: .top, endPoint: .bottom))
-                    .clipShape(RoundedRectangle(cornerRadius: 22.5))
-                    .shadow(color: Color(.black).opacity(0.3), radius: 10, x: 0, y: 4)
-            }
-        }
-    }
-}
 
 struct LoginMainFields: View {
     @Binding var email:String
