@@ -8,3 +8,11 @@ Used Pods:
 >pod 'Firebase/Auth'<br />
 >pod 'Firebase/Firestore'<br />
 >pod 'Firebase/Database'
+
+
+
+
+
+
+Project Submitted as partial fulfilment of the requirements of SOEN 341. <br /><br />
+![title](https://www.concordia.ca/etc/designs/concordia/clientlibs/img/logo-concordia-university-montreal.png)
