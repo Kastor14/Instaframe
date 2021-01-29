@@ -9,32 +9,10 @@ import SwiftUI
 import URLImage
 struct LoginCarouselView: View {
     var body: some View {
-        ScrollView(.horizontal) {
+        ScrollView(.horizontal, showsIndicators: false) {
             LazyHStack {
                 ForEach(0..<10){item in
-//                    URLImage(url: randomImageURL,
-//                                         options: URLImageOptions(
-//                                            expireAfter: 0.0,             // Expire after 5 minutes
-//                                            cachePolicy: .ignoreCache() // Return cached image or download after delay
-//                                         ),
-//                                         empty: {
-//                                            Text("Nothing here")            // This view is displayed before download starts
-//                                         },
-//                                         inProgress: { progress -> Text in  // Display progress
-//                                            URLImageService.shared.cleanup()
-//                                            return Text("Loading...")
-//
-//                                         },
-//                                         failure: { error, retry in         // Display error and retry button
-//                                            VStack {
-//                                                Text(error.localizedDescription)
-//                                                Button("Retry", action: retry)
-//                                            }
-//                                         },
-//                                         content: { image in                // Content view
-//                                            image
-//
-//                                         })
+
                     URLImage(url: randomImageURL,
                              options: URLImageOptions(
                                                
@@ -48,48 +26,14 @@ struct LoginCarouselView: View {
                                     .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
                              })
                     
-//                        .onAppear {
-//                            URLImage(url: randomImageURL,
-//                                     options: URLImageOptions(
-//                                        expireAfter: 0.0,             // Expire after 5 minutes
-//                                        cachePolicy: .ignoreCache() // Ensure we always get a new one
-//                                     ),
-//                                     empty: {
-//                                        Text("Nothing here")            // This view is displayed before download starts
-//                                     },
-//                                     inProgress: { progress -> Text in  // Display progress
-//
-//                                        return Text("Loading...")
-//
-//                                     },
-//                                     failure: { error, retry in         // Display error and retry button
-//                                        VStack {
-//                                            Text(error.localizedDescription)
-//                                            Button("Retry", action: retry)
-//                                        }
-//                                     },
-//                                     content: { image in                // Content view
-//                                        image
-//                                            .resizable()
-//                                            .aspectRatio(contentMode: .fill)
-//                                            .frame(width: 225, height: 225)
-//                                            .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
-//                                     })
-//                        }
                 }
                 
-    //            LazyHStack{
-    //                ForEach(backgroundImages){ item in
-    //                    item.image
-    //
-    //
-    //                }
-    //            }
-                
+
                 
                 
             }
         }
+        
     }
 }
 
