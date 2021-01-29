@@ -16,9 +16,9 @@ struct LoginView: View {
                 
                 
                 VStack(spacing: 20) {
-                    LoginCarouselView()
-                    LoginCarouselView()
-                    LoginCarouselView()
+                    LoginCarouselView(reversed: .constant(true))
+                    LoginCarouselView(reversed: .constant(false))
+                    LoginCarouselView(reversed: .constant(true))
                 }
                 Text("Instafame")
                     .foregroundColor(.white)
@@ -42,16 +42,6 @@ struct LoginView: View {
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView()
-    }
-}
-
-extension URL {
-    private static var baseUrl: String {
-        return "https://api.unsplash.com/"
-    }
-    
-    static func with(string: String) -> URL? {
-        return URL(string: "\(baseUrl)\(string)")
     }
 }
 

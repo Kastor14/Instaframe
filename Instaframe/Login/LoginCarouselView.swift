@@ -8,12 +8,13 @@
 import SwiftUI
 import URLImage
 struct LoginCarouselView: View {
+    @Binding var reversed:Bool
     var body: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            LazyHStack {
-                ForEach(0..<10){item in
+//        ScrollView(.horizontal, showsIndicators: false) {
+        HStack(spacing: 20) {
+                ForEach(0..<15){item in
 
-                    URLImage(url: randomImageURL,
+                    URLImage(url: randomImageURL[item],
                              options: URLImageOptions(
                                                
                                 cachePolicy: .ignoreCache(delay: 0.0)
@@ -32,105 +33,29 @@ struct LoginCarouselView: View {
                 
                 
             }
+        .offset(x: reversed ? -1500 : 1500)
+            .animation(
+                Animation.linear(duration: 60)
+                    .repeatForever(autoreverses: true)
+            )
+
+            
         }
         
-    }
+    //}
 }
 
-struct LoginCarouselView_Previews: PreviewProvider {
-    static var previews: some View {
-        LoginCarouselView()
-    }
-}
-
-//class LoginBackgroundImageData: Identifiable, ObservableObject {
-//    var id = UUID()
-//    let image =
-////    func getMoreImages() -> some View {
-////        return RandomLoginImage()
-////    }
-//
-//}
-//let backgroundImages = [ URLImage(url: randomImageURL,
-//                                  options: URLImageOptions(
-//                                     expireAfter: 300.0,             // Expire after 5 minutes
-//                                     cachePolicy: .returnCacheElseLoad(cacheDelay: nil, downloadDelay: 0.25) // Return cached image or download after delay
-//                                  ),
-//                                  empty: {
-//                                     Text("Nothing here")            // This view is displayed before download starts
-//                                  },
-//                                  inProgress: { progress -> Text in  // Display progress
-//
-//                                     return Text("Loading...")
-//
-//                                  },
-//                                  failure: { error, retry in         // Display error and retry button
-//                                     VStack {
-//                                         Text(error.localizedDescription)
-//                                         Button("Retry", action: retry)
-//                                     }
-//                                  },
-//                                  content: { image in                // Content view
-//                                     image
-//                                         .resizable()
-//                                         .aspectRatio(contentMode: .fill)
-//                                         .frame(width: 225, height: 225)
-//                                         .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
-//                                  }),URLImage(url: randomImageURL,
-//                                              options: URLImageOptions(
-//                                                 expireAfter: 300.0,             // Expire after 5 minutes
-//                                                 cachePolicy: .returnCacheElseLoad(cacheDelay: nil, downloadDelay: 0.25) // Return cached image or download after delay
-//                                              ),
-//                                              empty: {
-//                                                 Text("Nothing here")            // This view is displayed before download starts
-//                                              },
-//                                              inProgress: { progress -> Text in  // Display progress
-//
-//                                                 return Text("Loading...")
-//
-//                                              },
-//                                              failure: { error, retry in         // Display error and retry button
-//                                                 VStack {
-//                                                     Text(error.localizedDescription)
-//                                                     Button("Retry", action: retry)
-//                                                 }
-//                                              },
-//                                              content: { image in                // Content view
-//                                                 image
-//                                                     .resizable()
-//                                                     .aspectRatio(contentMode: .fill)
-//                                                     .frame(width: 225, height: 225)
-//                                                     .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
-//                                              }), URLImage(url: randomImageURL,
-//                                                           options: URLImageOptions(
-//                                                              expireAfter: 300.0,             // Expire after 5 minutes
-//                                                              cachePolicy: .returnCacheElseLoad(cacheDelay: nil, downloadDelay: 0.25) // Return cached image or download after delay
-//                                                           ),
-//                                                           empty: {
-//                                                              Text("Nothing here")            // This view is displayed before download starts
-//                                                           },
-//                                                           inProgress: { progress -> Text in  // Display progress
-//
-//                                                              return Text("Loading...")
-//
-//                                                           },
-//                                                           failure: { error, retry in         // Display error and retry button
-//                                                              VStack {
-//                                                                  Text(error.localizedDescription)
-//                                                                  Button("Retry", action: retry)
-//                                                              }
-//                                                           },
-//                                                           content: { image in                // Content view
-//                                                              image
-//                                                                  .resizable()
-//                                                                  .aspectRatio(contentMode: .fill)
-//                                                                  .frame(width: 225, height: 225)
-//                                                                  .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
-//                                                           })]
-let randomImageURL: URL = URL(string: "https://source.unsplash.com/random/400x400")!
-
-//struct RandomLoginImage: View {
-//    var body: some View {
-//
+//struct LoginCarouselView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        LoginCarouselView()
 //    }
 //}
+
+
+let randomImageURL: [URL] = [URL(string: "https://source.unsplash.com/random/400x401")!, URL(string: "https://source.unsplash.com/random/400x402")!, URL(string: "https://source.unsplash.com/random/400x403")!, URL(string: "https://source.unsplash.com/random/400x404")!, URL(string: "https://source.unsplash.com/random/400x405")!, URL(string: "https://source.unsplash.com/random/400x406")!, URL(string: "https://source.unsplash.com/random/400x407")!, URL(string: "https://source.unsplash.com/random/400x408")!, URL(string: "https://source.unsplash.com/random/400x409")!, URL(string: "https://source.unsplash.com/random/400x410")!, URL(string: "https://source.unsplash.com/random/400x411")!, URL(string: "https://source.unsplash.com/random/400x412")!, URL(string: "https://source.unsplash.com/random/400x413")!, URL(string: "https://source.unsplash.com/random/400x414")!, URL(string: "https://source.unsplash.com/random/400x415")!]
+
+extension UIScreen{
+   static let screenWidth = UIScreen.main.bounds.size.width
+   static let screenHeight = UIScreen.main.bounds.size.height
+   static let screenSize = UIScreen.main.bounds.size
+}
