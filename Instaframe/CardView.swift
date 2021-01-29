@@ -22,7 +22,7 @@ struct CardView: View {
             post.image
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(width: 240, height: 310)
+                .frame(width: 240, height: 310, alignment: .center)
                 .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
             VStack {
                 
@@ -135,6 +135,9 @@ struct Post: Identifiable {
         if previewImage != nil {
             image = previewImage!
         }
+    }
+    mutating func updateImage(newImage: UIImage){
+        image = Image(uiImage: newImage)
     }
 }
 

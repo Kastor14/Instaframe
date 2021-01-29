@@ -3,20 +3,26 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		032B76D925BB53FB00CD6D7E /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B76D825BB53FB00CD6D7E /* Home.swift */; };
+		032B76DC25BB55B400CD6D7E /* PostCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B76DB25BB55B400CD6D7E /* PostCreator.swift */; };
 		0367C85A25B8AEA700657AE0 /* InstaframeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0367C85925B8AEA700657AE0 /* InstaframeApp.swift */; };
 		0367C85C25B8AEA700657AE0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0367C85B25B8AEA700657AE0 /* ContentView.swift */; };
 		0367C85E25B8AEA800657AE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0367C85D25B8AEA800657AE0 /* Assets.xcassets */; };
 		0367C86125B8AEA800657AE0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0367C86025B8AEA800657AE0 /* Preview Assets.xcassets */; };
 		0367C86A25B8AF3500657AE0 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0367C86925B8AF3500657AE0 /* CardView.swift */; };
 		039276CB25BA316C00B495D8 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039276CA25BA316C00B495D8 /* CameraView.swift */; };
-		039276CE25BA31B900B495D8 /* CameraCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039276CD25BA31B900B495D8 /* CameraCoordinator.swift */; };
+		03D9DF2D25C3938B00F581C8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D9DF2C25C3938B00F581C8 /* LoginView.swift */; };
+		03D9DF3025C3A39B00F581C8 /* LoginCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D9DF2F25C3A39B00F581C8 /* LoginCarouselView.swift */; };
+		03D9DF3625C3A5B400F581C8 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 03D9DF3525C3A5B400F581C8 /* URLImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		032B76D825BB53FB00CD6D7E /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		032B76DB25BB55B400CD6D7E /* PostCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCreator.swift; sourceTree = "<group>"; };
 		0367C85625B8AEA700657AE0 /* Instaframe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instaframe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0367C85925B8AEA700657AE0 /* InstaframeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaframeApp.swift; sourceTree = "<group>"; };
 		0367C85B25B8AEA700657AE0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -25,7 +31,8 @@
 		0367C86225B8AEA800657AE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0367C86925B8AF3500657AE0 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		039276CA25BA316C00B495D8 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
-		039276CD25BA31B900B495D8 /* CameraCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCoordinator.swift; sourceTree = "<group>"; };
+		03D9DF2C25C3938B00F581C8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		03D9DF2F25C3A39B00F581C8 /* LoginCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCarouselView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03D9DF3625C3A5B400F581C8 /* URLImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,9 +68,11 @@
 			children = (
 				0367C85925B8AEA700657AE0 /* InstaframeApp.swift */,
 				0367C85B25B8AEA700657AE0 /* ContentView.swift */,
+				032B76D825BB53FB00CD6D7E /* Home.swift */,
+				03D9DF3225C3A3B900F581C8 /* Login */,
 				0367C86925B8AF3500657AE0 /* CardView.swift */,
+				032B76DB25BB55B400CD6D7E /* PostCreator.swift */,
 				039276CA25BA316C00B495D8 /* CameraView.swift */,
-				039276CD25BA31B900B495D8 /* CameraCoordinator.swift */,
 				0367C85D25B8AEA800657AE0 /* Assets.xcassets */,
 				0367C86225B8AEA800657AE0 /* Info.plist */,
 				0367C85F25B8AEA800657AE0 /* Preview Content */,
@@ -76,6 +86,15 @@
 				0367C86025B8AEA800657AE0 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		03D9DF3225C3A3B900F581C8 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				03D9DF2C25C3938B00F581C8 /* LoginView.swift */,
+				03D9DF2F25C3A39B00F581C8 /* LoginCarouselView.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -94,6 +113,9 @@
 			dependencies = (
 			);
 			name = Instaframe;
+			packageProductDependencies = (
+				03D9DF3525C3A5B400F581C8 /* URLImage */,
+			);
 			productName = Instaframe;
 			productReference = 0367C85625B8AEA700657AE0 /* Instaframe.app */;
 			productType = "com.apple.product-type.application";
@@ -121,6 +143,9 @@
 				Base,
 			);
 			mainGroup = 0367C84D25B8AEA700657AE0;
+			packageReferences = (
+				03D9DF3425C3A5B400F581C8 /* XCRemoteSwiftPackageReference "url-image" */,
+			);
 			productRefGroup = 0367C85725B8AEA700657AE0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -148,10 +173,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0367C85C25B8AEA700657AE0 /* ContentView.swift in Sources */,
-				039276CE25BA31B900B495D8 /* CameraCoordinator.swift in Sources */,
+				03D9DF2D25C3938B00F581C8 /* LoginView.swift in Sources */,
 				0367C86A25B8AF3500657AE0 /* CardView.swift in Sources */,
 				0367C85A25B8AEA700657AE0 /* InstaframeApp.swift in Sources */,
+				03D9DF3025C3A39B00F581C8 /* LoginCarouselView.swift in Sources */,
+				032B76D925BB53FB00CD6D7E /* Home.swift in Sources */,
 				039276CB25BA316C00B495D8 /* CameraView.swift in Sources */,
+				032B76DC25BB55B400CD6D7E /* PostCreator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +368,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		03D9DF3425C3A5B400F581C8 /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		03D9DF3525C3A5B400F581C8 /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 03D9DF3425C3A5B400F581C8 /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0367C84E25B8AEA700657AE0 /* Project object */;
 }

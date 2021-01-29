@@ -47,6 +47,8 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Instaframe needs to acces your picture to allow you to create post from your Camera Roll.</string>
+	<key>NSCameraUsageDescription</key>
 	<string>Instaframe needs to use the Camera to allow you to take pictures with the App.</string>
 </dict>
 </plist>
