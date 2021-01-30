@@ -2,12 +2,12 @@
 
 Instaframe is an iOS App built as a course-project. It combines what we love about Instagram<sup>TM</sup> with exciting new features such as: <i>list new features once approved by costumer.</i><br /><br />
 Team Members:
->Khagik Astor - <i>Kastor14</i><br />
->Christiane Al-Tayar - <i>christianealtayar</i><br />
->Daren Kalafian - <i>DarenKaf</i><br />
->Mohsen Lhaf - <i>mohsen220</i><br />
->Ejazali Rezayi - <i>EjazaliRezayi</i><br />
->Jean-Baptiste Waring - <i>jbwaring</i>
+ * Khagik Astor - <i>Kastor14</i><br />
+ * Christiane Al-Tayar - <i>christianealtayar</i><br />
+ * Daren Kalafian - <i>DarenKaf</i><br />
+ * Mohsen Lhaf - <i>mohsen220</i><br />
+ * Ejazali Rezayi - <i>EjazaliRezayi</i><br />
+ * Jean-Baptiste Waring - <i>jbwaring</i>
 
 Core Features:
 >Login<br />
