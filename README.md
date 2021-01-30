@@ -1,6 +1,6 @@
 # Instaframe
 
-Instaframe is an iOS App built as a course-project. It combines what we love about Instagram<sup>TM</sup> with exciting new features such as: <i>list new features.</i><br /><br />
+Instaframe is an iOS App built as a course-project. It combines what we love about Instagram<sup>TM</sup> with exciting new features such as: <i>list new features once approved by costumer.</i><br /><br />
 Team Members:
 >Khagik Astor - <i>Kastor14</i><br />
 >Christiane Al-Tayar - <i>christianealtayar</i><br />
