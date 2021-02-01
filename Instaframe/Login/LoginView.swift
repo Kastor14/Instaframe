@@ -47,7 +47,7 @@ struct LoginView: View {
     var body: some View {
         
         ZStack {
-            
+             
           
             VStack(spacing: 25) {
                 VStack {
