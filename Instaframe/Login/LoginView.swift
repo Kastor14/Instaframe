@@ -16,6 +16,7 @@ struct LoginView: View {
     @State var showAlert:Bool = false
     @State var email:String = ""
     @State var password:String = ""
+    @State var showingSignUp = false
     
     func Login(){
         //ADD HIDE KEYBOARD!
@@ -36,6 +37,7 @@ struct LoginView: View {
                     self.isSuccessful = true
                     self.email = ""
                     self.password = ""
+                    print("Current User ID:\(String(describing: Auth.auth().currentUser?.uid))")
                 }
                 
             }
@@ -46,7 +48,7 @@ struct LoginView: View {
         
         ZStack {
             
-            LoginWindowBackgroundView()
+           // LoginWindowBackgroundView()
             VStack(spacing: 25) {
                 VStack {
                     VStack(spacing: 50) {
@@ -68,15 +70,7 @@ struct LoginView: View {
                                     .shadow(color: Color(.black).opacity(0.3), radius: 10, x: 0, y: 4)
                                 
                             }
-                            Button(action: {}) {
-                                Text("SignUp!")
-                                    .font(.system(size: 21, weight: .bold, design: .rounded))
-                                    .foregroundColor(.white)
-                                    .frame(width: 125, height: 45)
-                                    .background(LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 0.3490196078, green: 0.3960784314, blue: 1, alpha: 1)), Color(#colorLiteral(red: 0.5098039216, green: 0.3725490196, blue: 0.9647058824, alpha: 1))]), startPoint: .top, endPoint: .bottom))
-                                    .clipShape(RoundedRectangle(cornerRadius: 22.5))
-                                    .shadow(color: Color(.black).opacity(0.3), radius: 10, x: 0, y: 4)
-                            }
+
                         }
                         
                     }
@@ -85,7 +79,7 @@ struct LoginView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 30))
                     .shadow(color: Color(.black).opacity(0.3), radius: 20, x: 0, y: 4)
                 }
-                Button(action: {}) {
+                Button(action: {self.showingSignUp.toggle()}) {
                     Text("Don’t have an account yet? Create one now.")
                         .foregroundColor(Color(#colorLiteral(red: 0.2039215686, green: 0, blue: 1, alpha: 0.52)))
                         .font(.system(size: 12, weight: .regular, design: .default))
@@ -94,6 +88,10 @@ struct LoginView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 15))
                         .shadow(color: Color(.black).opacity(0.15), radius: 20, x: 0, y: 4)
                 }
+                .sheet(isPresented: $showingSignUp) {
+                    SignUpView()
+                }
+                
                 Button(action: {}) {
                     Text("Forgot your password?")
                         .foregroundColor(Color(#colorLiteral(red: 0.2039215686, green: 0, blue: 1, alpha: 0.52)))
@@ -109,7 +107,8 @@ struct LoginView: View {
             Alert(title: Text("Authentication Failed."), message: Text(alertMessage), dismissButton: .default(Text("OK")))
         }
         .fullScreenCover(isPresented: $isSuccessful, content: {
-                    Home()
+                  Home()
+            
                 })
         
         

@@ -18,7 +18,8 @@
 		039276CB25BA316C00B495D8 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039276CA25BA316C00B495D8 /* CameraView.swift */; };
 		03D9DF2D25C3938B00F581C8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D9DF2C25C3938B00F581C8 /* LoginView.swift */; };
 		03D9DF3025C3A39B00F581C8 /* LoginCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D9DF2F25C3A39B00F581C8 /* LoginCarouselView.swift */; };
-		03D9DF3625C3A5B400F581C8 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 03D9DF3525C3A5B400F581C8 /* SwiftPackageProductDependency */; };
+		03D9DF3625C3A5B400F581C8 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 03D9DF3525C3A5B400F581C8 /* URLImage */; };
+		03EC58D725C8492500E30D2F /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EC58D625C8492500E30D2F /* SignUpView.swift */; };
 		89DA598F0C1CED6628E5A4B0 /* Pods_Instaframe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC0B60D71202170B0F4C45C /* Pods_Instaframe.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		039276CA25BA316C00B495D8 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		03D9DF2C25C3938B00F581C8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		03D9DF2F25C3A39B00F581C8 /* LoginCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCarouselView.swift; sourceTree = "<group>"; };
+		03EC58D625C8492500E30D2F /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		043552BE8BE5DAAA337F9252 /* Pods-Instaframe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instaframe.debug.xcconfig"; path = "Target Support Files/Pods-Instaframe/Pods-Instaframe.debug.xcconfig"; sourceTree = "<group>"; };
 		3AC0B60D71202170B0F4C45C /* Pods_Instaframe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Instaframe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43C2EFC323309EAD850B417F /* Pods-Instaframe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instaframe.release.xcconfig"; path = "Target Support Files/Pods-Instaframe/Pods-Instaframe.release.xcconfig"; sourceTree = "<group>"; };
@@ -46,7 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03D9DF3625C3A5B400F581C8 /* BuildFile in Frameworks */,
+				03D9DF3625C3A5B400F581C8 /* URLImage in Frameworks */,
 				89DA598F0C1CED6628E5A4B0 /* Pods_Instaframe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				03D9DF2C25C3938B00F581C8 /* LoginView.swift */,
+				03EC58D625C8492500E30D2F /* SignUpView.swift */,
 				03D9DF2F25C3A39B00F581C8 /* LoginCarouselView.swift */,
 			);
 			path = Login;
@@ -121,7 +124,6 @@
 				043552BE8BE5DAAA337F9252 /* Pods-Instaframe.debug.xcconfig */,
 				43C2EFC323309EAD850B417F /* Pods-Instaframe.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -144,7 +146,7 @@
 			);
 			name = Instaframe;
 			packageProductDependencies = (
-				03D9DF3525C3A5B400F581C8 /* SwiftPackageProductDependency */,
+				03D9DF3525C3A5B400F581C8 /* URLImage */,
 			);
 			productName = Instaframe;
 			productReference = 0367C85625B8AEA700657AE0 /* Instaframe.app */;
@@ -174,7 +176,7 @@
 			);
 			mainGroup = 0367C84D25B8AEA700657AE0;
 			packageReferences = (
-				03D9DF3425C3A5B400F581C8 /* RemoteSwiftPackageReference */,
+				03D9DF3425C3A5B400F581C8 /* XCRemoteSwiftPackageReference "url-image" */,
 			);
 			productRefGroup = 0367C85725B8AEA700657AE0 /* Products */;
 			projectDirPath = "";
@@ -252,6 +254,7 @@
 				03D9DF3025C3A39B00F581C8 /* LoginCarouselView.swift in Sources */,
 				032B76D925BB53FB00CD6D7E /* Home.swift in Sources */,
 				039276CB25BA316C00B495D8 /* CameraView.swift in Sources */,
+				03EC58D725C8492500E30D2F /* SignUpView.swift in Sources */,
 				032B76DC25BB55B400CD6D7E /* PostCreator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,7 +448,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		03D9DF3425C3A5B400F581C8 /* RemoteSwiftPackageReference */ = {
+		03D9DF3425C3A5B400F581C8 /* XCRemoteSwiftPackageReference "url-image" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
 			requirement = {
@@ -456,9 +459,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		03D9DF3525C3A5B400F581C8 /* SwiftPackageProductDependency */ = {
+		03D9DF3525C3A5B400F581C8 /* URLImage */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 03D9DF3425C3A5B400F581C8 /* RemoteSwiftPackageReference */;
+			package = 03D9DF3425C3A5B400F581C8 /* XCRemoteSwiftPackageReference "url-image" */;
 			productName = URLImage;
 		};
 /* End XCSwiftPackageProductDependency section */
