@@ -51,7 +51,7 @@ struct LoginView: View {
           
             VStack(spacing: 25) {
                 VStack {
-                    VStack(spacing: 50) {
+                    VStack(spacing: 50) { 
                         
                         LoginMainFields(email: $email, password: $password)
                         

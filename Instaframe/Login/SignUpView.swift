@@ -11,7 +11,7 @@ struct SignUpView: View {
     @State var email:String = ""
     @State var password:String = ""
     @State var password2:String = ""
-    @State var username:String = ""
+    @State var username:String = " "
     
     
     var body: some View {
