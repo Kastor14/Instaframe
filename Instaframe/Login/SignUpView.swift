@@ -5,7 +5,7 @@
 //  Created by Jean-Baptiste Waring on 2021-02-01.
 //
 
-import SwiftUI
+import SwiftUI 
 
 struct SignUpView: View {
     @State var email:String = ""
