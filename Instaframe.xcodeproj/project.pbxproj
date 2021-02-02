@@ -18,9 +18,9 @@
 		039276CB25BA316C00B495D8 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039276CA25BA316C00B495D8 /* CameraView.swift */; };
 		03D9DF2D25C3938B00F581C8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D9DF2C25C3938B00F581C8 /* LoginView.swift */; };
 		03D9DF3025C3A39B00F581C8 /* LoginCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D9DF2F25C3A39B00F581C8 /* LoginCarouselView.swift */; };
-		03D9DF3625C3A5B400F581C8 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 03D9DF3525C3A5B400F581C8 /* URLImage */; };
+		03D9DF3625C3A5B400F581C8 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 03D9DF3525C3A5B400F581C8 /* SwiftPackageProductDependency */; };
 		03EC58D725C8492500E30D2F /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EC58D625C8492500E30D2F /* SignUpView.swift */; };
-		89DA598F0C1CED6628E5A4B0 /* Pods_Instaframe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC0B60D71202170B0F4C45C /* Pods_Instaframe.framework */; };
+		EBE70CB392D7FFBA78D68E66 /* Pods_Instaframe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E806E2DB170FA3ABA050118B /* Pods_Instaframe.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,9 +38,9 @@
 		03D9DF2C25C3938B00F581C8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		03D9DF2F25C3A39B00F581C8 /* LoginCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCarouselView.swift; sourceTree = "<group>"; };
 		03EC58D625C8492500E30D2F /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
-		043552BE8BE5DAAA337F9252 /* Pods-Instaframe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instaframe.debug.xcconfig"; path = "Target Support Files/Pods-Instaframe/Pods-Instaframe.debug.xcconfig"; sourceTree = "<group>"; };
-		3AC0B60D71202170B0F4C45C /* Pods_Instaframe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Instaframe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		43C2EFC323309EAD850B417F /* Pods-Instaframe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instaframe.release.xcconfig"; path = "Target Support Files/Pods-Instaframe/Pods-Instaframe.release.xcconfig"; sourceTree = "<group>"; };
+		2021F2C440BEA34BBE8B8ADE /* Pods-Instaframe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instaframe.release.xcconfig"; path = "Target Support Files/Pods-Instaframe/Pods-Instaframe.release.xcconfig"; sourceTree = "<group>"; };
+		E806E2DB170FA3ABA050118B /* Pods_Instaframe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Instaframe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEF249B7B8A7302C645E6A20 /* Pods-Instaframe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instaframe.debug.xcconfig"; path = "Target Support Files/Pods-Instaframe/Pods-Instaframe.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,8 +48,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03D9DF3625C3A5B400F581C8 /* URLImage in Frameworks */,
-				89DA598F0C1CED6628E5A4B0 /* Pods_Instaframe.framework in Frameworks */,
+				03D9DF3625C3A5B400F581C8 /* BuildFile in Frameworks */,
+				EBE70CB392D7FFBA78D68E66 /* Pods_Instaframe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,7 +62,7 @@
 				0367C85825B8AEA700657AE0 /* Instaframe */,
 				0367C85725B8AEA700657AE0 /* Products */,
 				EF874C97530491A338686E5D /* Pods */,
-				82299289758A9476E6D58F09 /* Frameworks */,
+				BA9AFE5E663309E1C9A2E97C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,10 +110,10 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		82299289758A9476E6D58F09 /* Frameworks */ = {
+		BA9AFE5E663309E1C9A2E97C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3AC0B60D71202170B0F4C45C /* Pods_Instaframe.framework */,
+				E806E2DB170FA3ABA050118B /* Pods_Instaframe.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -121,8 +121,8 @@
 		EF874C97530491A338686E5D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				043552BE8BE5DAAA337F9252 /* Pods-Instaframe.debug.xcconfig */,
-				43C2EFC323309EAD850B417F /* Pods-Instaframe.release.xcconfig */,
+				FEF249B7B8A7302C645E6A20 /* Pods-Instaframe.debug.xcconfig */,
+				2021F2C440BEA34BBE8B8ADE /* Pods-Instaframe.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -134,11 +134,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0367C86525B8AEA800657AE0 /* Build configuration list for PBXNativeTarget "Instaframe" */;
 			buildPhases = (
-				D8F910F8216DB7DC26D20135 /* [CP] Check Pods Manifest.lock */,
+				201B8FF49362220E0A656FEB /* [CP] Check Pods Manifest.lock */,
 				0367C85225B8AEA700657AE0 /* Sources */,
 				0367C85325B8AEA700657AE0 /* Frameworks */,
 				0367C85425B8AEA700657AE0 /* Resources */,
-				4F11CB7ED68BA68D31F9B501 /* [CP] Embed Pods Frameworks */,
+				385EB3735FAD0FE13F13E2E4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -146,7 +146,7 @@
 			);
 			name = Instaframe;
 			packageProductDependencies = (
-				03D9DF3525C3A5B400F581C8 /* URLImage */,
+				03D9DF3525C3A5B400F581C8 /* SwiftPackageProductDependency */,
 			);
 			productName = Instaframe;
 			productReference = 0367C85625B8AEA700657AE0 /* Instaframe.app */;
@@ -176,7 +176,7 @@
 			);
 			mainGroup = 0367C84D25B8AEA700657AE0;
 			packageReferences = (
-				03D9DF3425C3A5B400F581C8 /* XCRemoteSwiftPackageReference "url-image" */,
+				03D9DF3425C3A5B400F581C8 /* RemoteSwiftPackageReference */,
 			);
 			productRefGroup = 0367C85725B8AEA700657AE0 /* Products */;
 			projectDirPath = "";
@@ -201,24 +201,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4F11CB7ED68BA68D31F9B501 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Instaframe/Pods-Instaframe-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Instaframe/Pods-Instaframe-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Instaframe/Pods-Instaframe-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D8F910F8216DB7DC26D20135 /* [CP] Check Pods Manifest.lock */ = {
+		201B8FF49362220E0A656FEB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -238,6 +221,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		385EB3735FAD0FE13F13E2E4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Instaframe/Pods-Instaframe-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Instaframe/Pods-Instaframe-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Instaframe/Pods-Instaframe-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -380,7 +380,7 @@
 		};
 		0367C86625B8AEA800657AE0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 043552BE8BE5DAAA337F9252 /* Pods-Instaframe.debug.xcconfig */;
+			baseConfigurationReference = FEF249B7B8A7302C645E6A20 /* Pods-Instaframe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -403,7 +403,7 @@
 		};
 		0367C86725B8AEA800657AE0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 43C2EFC323309EAD850B417F /* Pods-Instaframe.release.xcconfig */;
+			baseConfigurationReference = 2021F2C440BEA34BBE8B8ADE /* Pods-Instaframe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -448,7 +448,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		03D9DF3425C3A5B400F581C8 /* XCRemoteSwiftPackageReference "url-image" */ = {
+		03D9DF3425C3A5B400F581C8 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
 			requirement = {
@@ -459,9 +459,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		03D9DF3525C3A5B400F581C8 /* URLImage */ = {
+		03D9DF3525C3A5B400F581C8 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 03D9DF3425C3A5B400F581C8 /* XCRemoteSwiftPackageReference "url-image" */;
+			package = 03D9DF3425C3A5B400F581C8 /* RemoteSwiftPackageReference */;
 			productName = URLImage;
 		};
 /* End XCSwiftPackageProductDependency section */
