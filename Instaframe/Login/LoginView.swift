@@ -17,6 +17,7 @@ struct LoginView: View {
     @State var email:String = ""
     @State var password:String = ""
     @State var showingSignUp:Bool = false
+    @State var showingResetPassword:Bool = false
     
     func Login(){
         //ADD HIDE KEYBOARD!
@@ -100,7 +101,7 @@ struct LoginView: View {
                 }
                 
                 
-                Button(action: {}) {
+                Button(action: {self.showingResetPassword.toggle()}) {
                     Text("Forgot your password?")
                         .foregroundColor(Color(#colorLiteral(red: 0.2039215686, green: 0, blue: 1, alpha: 0.52)))
                         .font(.system(size: 12, weight: .regular, design: .default))
@@ -126,13 +127,19 @@ struct LoginView: View {
                 SignUpView()
           
               })
+            $0.sheet(isPresented: $showingResetPassword, content: {
+                ForgotPassword()
+          
+              })
         }
+        .statusBar(hidden: true)
         
         
 
         
         
     }
+    
 }
 
 

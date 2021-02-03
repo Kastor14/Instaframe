@@ -6,13 +6,16 @@
 //
 
 import SwiftUI 
+import FirebaseAuth
 
 struct SignUpView: View {
+    @Environment(\.presentationMode) var presentationMode
     @State var email:String = ""
     @State var password:String = ""
     @State var password2:String = ""
     @State var username:String = ""
-    
+    @State var showAlert:Bool = false
+    @State var errorDescription:String = ""
     
     var body: some View {
         VStack() {
@@ -60,7 +63,11 @@ struct SignUpView: View {
         .background(LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 1, green: 0.9843137255, blue: 0.9843137255, alpha: 1)), Color(#colorLiteral(red: 0.9137254902, green: 0.9098039216, blue: 0.9764705882, alpha: 1))]), startPoint: .top, endPoint: .bottom))
         .clipShape(RoundedRectangle(cornerRadius: 30))
         .shadow(color: Color(.black).opacity(0.3), radius: 20, x: 0, y: 4)
+        .alert(isPresented: $showAlert, content: {
+            Alert(title: Text("Account Creation Failed."), message: Text(errorDescription), dismissButton: .default(Text("OK")))
+        })
     }
+    
 }
 
 struct SignUpView_Previews: PreviewProvider {
@@ -153,6 +160,12 @@ extension SignUpView {
         
     }
     func checkUserUnique() -> Bool {
+//        if(email != ""){   FOR NOW EMAIL IS NOT CHECKED !
+//        Auth.auth().fetchSignInMethods(forEmail: email) { (array, error) in
+//            print(error?.localizedDescription ?? "ERROR in checkUserUnique")
+//            print(array)
+//            }
+//        }
         return true
     }
     
@@ -168,6 +181,21 @@ extension SignUpView {
         if(!showAccountCreateButton()){
             return // Do nothing, the button is not shown
         }
+        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+            if(error != nil){
+                errorDescription = error?.localizedDescription ?? ""
+                self.showAlert.toggle()
+                self.password = ""
+                self.password2 = ""
+                }
+            if(error == nil){
+                
+                self.presentationMode.wrappedValue.dismiss()
+            }
+            
+        }
+
+
         // The button was shown: Create the user's account.
     }
 }

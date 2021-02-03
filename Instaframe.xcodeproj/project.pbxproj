@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0314F84D25CAED2F004E84F6 /* MultiModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0314F84C25CAED2F004E84F6 /* MultiModal.swift */; };
+		0314F85025CAF264004E84F6 /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0314F84F25CAF264004E84F6 /* ForgotPassword.swift */; };
 		032B76D925BB53FB00CD6D7E /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B76D825BB53FB00CD6D7E /* Home.swift */; };
 		032B76DC25BB55B400CD6D7E /* PostCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B76DB25BB55B400CD6D7E /* PostCreator.swift */; };
 		0367C85A25B8AEA700657AE0 /* InstaframeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0367C85925B8AEA700657AE0 /* InstaframeApp.swift */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		0314F84C25CAED2F004E84F6 /* MultiModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiModal.swift; sourceTree = "<group>"; };
+		0314F84F25CAF264004E84F6 /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
 		032B76D825BB53FB00CD6D7E /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		032B76DB25BB55B400CD6D7E /* PostCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCreator.swift; sourceTree = "<group>"; };
 		0367C85625B8AEA700657AE0 /* Instaframe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instaframe.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +110,7 @@
 				03D9DF2C25C3938B00F581C8 /* LoginView.swift */,
 				0314F84C25CAED2F004E84F6 /* MultiModal.swift */,
 				03EC58D625C8492500E30D2F /* SignUpView.swift */,
+				0314F84F25CAF264004E84F6 /* ForgotPassword.swift */,
 				03D9DF2F25C3A39B00F581C8 /* LoginCarouselView.swift */,
 			);
 			path = Login;
@@ -260,6 +263,7 @@
 				039276CB25BA316C00B495D8 /* CameraView.swift in Sources */,
 				03EC58D725C8492500E30D2F /* SignUpView.swift in Sources */,
 				032B76DC25BB55B400CD6D7E /* PostCreator.swift in Sources */,
+				0314F85025CAF264004E84F6 /* ForgotPassword.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
