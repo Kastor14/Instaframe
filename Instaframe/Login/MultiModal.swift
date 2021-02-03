@@ -14,7 +14,7 @@ extension View {
     ///     $0.sheet(isPresented: $sheetCPresented) { Text("Sheet C") }
     /// }
     /// ```
-    public func multiModal(
+    public func  multiModal(
         @MultiModalCollector _ modals: (EmptyView) -> [AnyView]
     ) -> some View {
         modals(EmptyView()).reduce(AnyView(self)) { view, modal in
