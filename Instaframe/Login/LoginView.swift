@@ -48,8 +48,18 @@ struct LoginView: View {
         
         ZStack {
              
-          
+            Image("Water35")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .ignoresSafeArea(.all)
+            VStack {
+                Text("Instaframe")
+                    .foregroundColor(.white)
+                    .font(.system(size: 45, weight: .bold, design: .rounded))
+                Spacer();
+            }.padding(.top, 100)
             VStack(spacing: 25) {
+                
                 VStack {
                     VStack(spacing: 50) { 
                         
@@ -79,7 +89,7 @@ struct LoginView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 30))
                     .shadow(color: Color(.black).opacity(0.3), radius: 20, x: 0, y: 4)
                 }
-                Button(action: {self.showingSignUp.toggle()}) {
+                Button(action: {self.showingSignUp = true}) {
                     Text("Don’t have an account yet? Create one now.")
                         .foregroundColor(Color(#colorLiteral(red: 0.2039215686, green: 0, blue: 1, alpha: 0.52)))
                         .font(.system(size: 12, weight: .regular, design: .default))
@@ -88,9 +98,11 @@ struct LoginView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 15))
                         .shadow(color: Color(.black).opacity(0.15), radius: 20, x: 0, y: 4)
                 }
-                .sheet(isPresented: $showingSignUp) {
-                    SignUpView()
-                }
+                .fullScreenCover(isPresented: $showingSignUp, content: {
+                          SignUpView()
+                    
+                        })
+                
                 
                 Button(action: {}) {
                     Text("Forgot your password?")
