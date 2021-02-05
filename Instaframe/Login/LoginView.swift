@@ -16,7 +16,8 @@ struct LoginView: View {
     @State var showAlert:Bool = false
     @State var email:String = ""
     @State var password:String = ""
-    @State var showingSignUp = false
+    @State var showingSignUp:Bool = false
+    @State var showingResetPassword:Bool = false
     
     func Login(){
         //ADD HIDE KEYBOARD!
@@ -48,8 +49,18 @@ struct LoginView: View {
         
         ZStack {
              
-          
+            Image("Water35")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .ignoresSafeArea(.all)
+            VStack {
+                Text("Instaframe")
+                    .foregroundColor(.white)
+                    .font(.system(size: 45, weight: .bold, design: .rounded))
+                Spacer();
+            }.padding(.top, 100)
             VStack(spacing: 25) {
+                
                 VStack {
                     VStack(spacing: 50) { 
                         
@@ -88,11 +99,9 @@ struct LoginView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 15))
                         .shadow(color: Color(.black).opacity(0.15), radius: 20, x: 0, y: 4)
                 }
-                .sheet(isPresented: $showingSignUp) {
-                    SignUpView()
-                }
                 
-                Button(action: {}) {
+                
+                Button(action: {self.showingResetPassword.toggle()}) {
                     Text("Forgot your password?")
                         .foregroundColor(Color(#colorLiteral(red: 0.2039215686, green: 0, blue: 1, alpha: 0.52)))
                         .font(.system(size: 12, weight: .regular, design: .default))
@@ -102,18 +111,35 @@ struct LoginView: View {
                         .shadow(color: Color(.black).opacity(0.15), radius: 20, x: 0, y: 4)
                 }
             }
+            
+            
         }
         .alert(isPresented: $showAlert) {
             Alert(title: Text("Authentication Failed."), message: Text(alertMessage), dismissButton: .default(Text("OK")))
         }
-        .fullScreenCover(isPresented: $isSuccessful, content: {
-                  Home()
+        .multiModal{  //Thanks davdroman this is so useful!
             
-                })
+            $0.fullScreenCover(isPresented: $isSuccessful, content: {
+                Home()
+
+              })
+            $0.sheet(isPresented: $showingSignUp, content: {
+                SignUpView()
+          
+              })
+            $0.sheet(isPresented: $showingResetPassword, content: {
+                ForgotPassword()
+          
+              })
+        }
+        .statusBar(hidden: true)
         
+        
+
         
         
     }
+    
 }
 
 
