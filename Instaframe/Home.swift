@@ -20,12 +20,12 @@ struct Home: View {
                     
                 }
             
-//            ContentView(showSettings: $showSettings, currentUser: $currentUser).environment(\.managedObjectContext, managedObjectContext)
-//                .tabItem {
-//                    Image(systemName: "gear")
-//                    Text("Home")
-//
-//                }
+            PostCreatorView(currentUser: $currentUser).environment(\.managedObjectContext, managedObjectContext)
+                .tabItem {
+                    Image(systemName: "plus.rectangle.portrait")
+                    Text("New Post")
+
+                }
             
         }.sheet(isPresented: $showSettings, onDismiss: {updateUser()}, content: {
             SettingsView( currentUser: $currentUser).environment(\.managedObjectContext, managedObjectContext)

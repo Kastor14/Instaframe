@@ -103,7 +103,9 @@ extension SettingsView {
     
  func updateUser() {
     self.showCameraView = false
+    if (viewModel.selectedImage?.pngData() != nil){
     self.currentUser.avatar =  viewModel.selectedImage?.pngData()
+    }
  }
     
 }
@@ -179,22 +181,5 @@ extension SettingsView {
     }
     
     
-//
-//final class ViewModel: ObservableObject {
-//@Published var selectedImage: UIImage?
-//@Published var isPresentingImagePicker = false
-//private(set) var sourceType: ImagePicker.SourceType = .camera
-//func choosePhoto() {
-//            sourceType = .photoLibrary
-//            isPresentingImagePicker = true
-//        }
-//func takePhoto() {
-//            sourceType = .camera
-//            isPresentingImagePicker = true
-//        }
-//func didSelectImage(_ image: UIImage?) {
-//            selectedImage = image
-//            isPresentingImagePicker = false
-//        }
-//    }
+
 }

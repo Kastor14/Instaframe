@@ -54,35 +54,21 @@ struct ContentView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 250) {
                     ForEach(postList) { item in
-                        GeometryReader { geometry in
+                       GeometryReader { geometry in
                             CardView(post: item)
                                 .padding(.horizontal, 30)
                                 .padding(.top, 30)
-                        }
+                                
+                       }
                     }
                 }
             }
             
-        }
+        }.onAppear(perform: {
+//            addItem()
+        })
         
-//        NavigationView {
-//            VStack {
-//                List {
-//                    ForEach(listItems) { post in
-//                     CardView(preview: false, lovedCard: false, post: post)
-//
-//                    }
-//                    .onDelete(perform: deleteItem)
-//                    .onAppear(perform: {
-//                        print("ContentView() User UUID: \(String(describing: currentUser.userID))")
-//                    })
-//                }
-//                Button(action: addItem) {
-//                    Text("Add Item")
-//                }
-//            }
-//            .navigationBarItems(trailing: EditButton())
-//        }
+
     }
     
     
@@ -97,7 +83,7 @@ struct ContentView: View {
     func addItem() {
         let newItem = InstaframePost(context: managedObjectContext)
         newItem.userID = "New Item \(postList.count+1)"
-        print("There are \(postList[0].likeCount) records")
+      //  print("There are \(postList[0].likeCount) records")
         
         saveItems()
        
