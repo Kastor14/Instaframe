@@ -110,35 +110,4 @@ struct CardView: View {
     }
 }
 
-//struct CardView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CardView(post: samplePost)
-//    }
-//}
-
-
-
-//struct Post: Identifiable {
-//
-//    var id = UUID()
-//    var username:String
-//    var image:Image
-//    var avatar:Image
-//    var loved:Bool
-//    var previewImage:Image? {
-//        didSet {
-//            image = previewImage!
-//        }
-//    }
-//
-//    mutating func updateImagewithPreview() -> Void {
-//        if previewImage != nil {
-//            image = previewImage!
-//        }
-//    }
-//    mutating func updateImage(newImage: UIImage){
-//        image = Image(uiImage: newImage)
-//    }
-//}
-
 

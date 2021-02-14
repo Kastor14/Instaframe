@@ -27,6 +27,8 @@
 		0317F2FE25D0A017002A21F8 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 0317F2FD25D0A017002A21F8 /* Lottie */; };
 		0317F30125D0A077002A21F8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0317F30025D0A077002A21F8 /* GoogleService-Info.plist */; };
 		0358D85425D99710001A3117 /* PostCreatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0358D85325D99710001A3117 /* PostCreatorView.swift */; };
+		0358D86D25D99BFC001A3117 /* PostCreatorCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0358D86C25D99BFC001A3117 /* PostCreatorCamera.swift */; };
+		0358D87025D99F5B001A3117 /* PostCreatorPostPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0358D86F25D99F5B001A3117 /* PostCreatorPostPreview.swift */; };
 		035B6ABE25D1909D00081C58 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035B6ABD25D1909D00081C58 /* OnBoardingView.swift */; };
 		035B6AC125D190D600081C58 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035B6AC025D190D600081C58 /* WelcomeView.swift */; };
 		035B6AC425D1970800081C58 /* OnBoardAccountCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035B6AC325D1970800081C58 /* OnBoardAccountCreate.swift */; };
@@ -60,6 +62,8 @@
 		0317F2EE25D0971B002A21F8 /* 9561-loading-unicorn.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "9561-loading-unicorn.json"; sourceTree = "<group>"; };
 		0317F30025D0A077002A21F8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0358D85325D99710001A3117 /* PostCreatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCreatorView.swift; sourceTree = "<group>"; };
+		0358D86C25D99BFC001A3117 /* PostCreatorCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCreatorCamera.swift; sourceTree = "<group>"; };
+		0358D86F25D99F5B001A3117 /* PostCreatorPostPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCreatorPostPreview.swift; sourceTree = "<group>"; };
 		035B6ABD25D1909D00081C58 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
 		035B6AC025D190D600081C58 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		035B6AC325D1970800081C58 /* OnBoardAccountCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardAccountCreate.swift; sourceTree = "<group>"; };
@@ -112,7 +116,7 @@
 				030504FA25CF25580066F19D /* SceneDelegate.swift */,
 				030504FC25CF25580066F19D /* ContentView.swift */,
 				03A3F90B25D0BC25005A4AEB /* Home.swift */,
-				0358D85325D99710001A3117 /* PostCreatorView.swift */,
+				0358D86A25D99B98001A3117 /* PostCreator */,
 				035B6AB925D18FC500081C58 /* Onboarding */,
 				03A3F90E25D0BF47005A4AEB /* SettingsView.swift */,
 				03C1080825D078C600BF7F05 /* CardView.swift */,
@@ -159,6 +163,16 @@
 				0317F2DB25D09001002A21F8 /* SignUpView.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		0358D86A25D99B98001A3117 /* PostCreator */ = {
+			isa = PBXGroup;
+			children = (
+				0358D85325D99710001A3117 /* PostCreatorView.swift */,
+				0358D86C25D99BFC001A3117 /* PostCreatorCamera.swift */,
+				0358D86F25D99F5B001A3117 /* PostCreatorPostPreview.swift */,
+			);
+			path = PostCreator;
 			sourceTree = "<group>";
 		};
 		035B6AB925D18FC500081C58 /* Onboarding */ = {
@@ -313,12 +327,14 @@
 				0317F2DF25D09001002A21F8 /* LoginView.swift in Sources */,
 				03A3F90C25D0BC25005A4AEB /* Home.swift in Sources */,
 				030504FB25CF25580066F19D /* SceneDelegate.swift in Sources */,
+				0358D87025D99F5B001A3117 /* PostCreatorPostPreview.swift in Sources */,
 				03A3F90F25D0BF47005A4AEB /* SettingsView.swift in Sources */,
 				035B6AC425D1970800081C58 /* OnBoardAccountCreate.swift in Sources */,
 				0317F2E025D09001002A21F8 /* SignUpView.swift in Sources */,
 				0317F2E425D0937F002A21F8 /* LoginLoadingView.swift in Sources */,
 				030504FD25CF25580066F19D /* ContentView.swift in Sources */,
 				0317F2EC25D09493002A21F8 /* LottieView.swift in Sources */,
+				0358D86D25D99BFC001A3117 /* PostCreatorCamera.swift in Sources */,
 				0305052225CF420E0066F19D /* CloudFunctions.swift in Sources */,
 				0317F2DD25D09001002A21F8 /* ForgotPassword.swift in Sources */,
 				035B6AC125D190D600081C58 /* WelcomeView.swift in Sources */,
