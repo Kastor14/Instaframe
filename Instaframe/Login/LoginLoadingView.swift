@@ -7,16 +7,18 @@
 import SwiftUI
 import FirebaseAuth
 
-let autoOnboard = true //Once Onboarding is setup set to false !
-var currentUser:InstaUser = InstaUser()
+let autoOnboard = false //Once Onboarding is setup set to false !
+
 
 struct LoginLoadingView:View {
     @Environment(\.managedObjectContext) var managedObjectContext
     @State var goHome:Bool = false
     @State var comeOnBoard:Bool = false
     @State var requestCount:Int = 0
+    @State var newUser:Bool = false
     @FetchRequest(fetchRequest: InstaUser.fetchAllUsers())  var userList: FetchedResults<InstaUser>
     @State var userUUID:String
+    @State var currentUser:InstaUser = InstaUser()
     var body: some View{
         
         VStack {
@@ -32,11 +34,12 @@ struct LoginLoadingView:View {
         }.multiModal{  //Thanks davdroman this is so useful!
             
             $0.fullScreenCover(isPresented: $goHome, content: {
-                ContentView().environment(\.managedObjectContext, managedObjectContext)
+                Home(currentUser: $currentUser).environment(\.managedObjectContext, managedObjectContext)
             })
             $0.fullScreenCover(isPresented: $comeOnBoard, content: {
-                LoginView().environment(\.managedObjectContext, managedObjectContext)
+                OnBoardingView(currentUser: $currentUser, newUser: newUser).environment(\.managedObjectContext, managedObjectContext)
             })
+            
         }
         
         
@@ -79,6 +82,11 @@ extension LoginLoadingView {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1){
                 FindUser()
             }
+        }
+        if(found == false && requestCount == 15){
+            print("Let's create the user!")
+            self.newUser = true
+            self.comeOnBoard = true
         }
     }
 }

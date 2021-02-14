@@ -36,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     lazy var persistentContainer: NSPersistentCloudKitContainer = {
       
         let container = NSPersistentCloudKitContainer(name: "Instaframe")
-        
+        //container.
         guard let description = container.persistentStoreDescriptions.first else {
             fatalError("description could not load in App Delegate")
         }
