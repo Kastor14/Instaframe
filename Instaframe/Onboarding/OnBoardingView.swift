@@ -12,15 +12,26 @@ struct OnBoardingView: View {
     @Binding var currentUser:InstaUser
     @State var newUser:Bool
     var body: some View {
-        TabView{
-           
-        WelcomeView()
-        OnBoardAccountCreate().environment(\.managedObjectContext, managedObjectContext)
-        }.tabViewStyle(PageTabViewStyle())
+  
+            ZStack {
+                Image("Water35")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .ignoresSafeArea(.all)
+                TabView{
+                   
+                WelcomeView()
+                    
+                OnBoardAccountCreate().environment(\.managedObjectContext, managedObjectContext)
+                }.tabViewStyle(PageTabViewStyle())
+            }
+        
+       
 
         
         
     }
+    
 }
 
 struct OnBoardingView_Previews: PreviewProvider {

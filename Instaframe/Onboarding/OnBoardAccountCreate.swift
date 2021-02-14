@@ -34,10 +34,10 @@ struct OnBoardAccountCreate: View {
     }
     var body: some View {
         ZStack {
-            Image("Water35")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .ignoresSafeArea(.all)
+//            Image("Water35")
+//                .resizable()
+//                .aspectRatio(contentMode: .fill)
+//                .ignoresSafeArea(.all)
             VStack() {
                 Text("Instaframe")
                     .font(.system(size: 40, weight: .bold, design: .rounded))
@@ -51,7 +51,7 @@ struct OnBoardAccountCreate: View {
                 Text(choosePicString)
                 ZStack {
                     //
-                    Image(uiImage: selectedProfilePic ?? UIImage(systemName: "person.circle")!)
+                    Image(uiImage: selectedProfilePic ?? UIImage(named: "sample_avatar")!)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .background(Color.white)

@@ -12,10 +12,10 @@ struct WelcomeView: View {
         
         ZStack {
             
-            Image("Water35")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .ignoresSafeArea(.all)
+//            Image("Water35")
+//                .resizable()
+//                .aspectRatio(contentMode: .fill)
+//                .ignoresSafeArea(.all)
             VStack {
                 Text("Instaframe")
                     .foregroundColor(.white)
